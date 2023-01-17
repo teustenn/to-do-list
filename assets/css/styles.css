@@ -4,6 +4,7 @@
     --primary-color: #0d0d0d;
     --secondary-color: #9000FF;
     --secondary-color-darker: #58009D;
+    --tertiary-color: #ABB2B9;
 }
 
 * {
@@ -28,10 +29,14 @@ input, button {
 }
 
 input:focus {
-    outline: 1px solid var(--secondary-color);
+    outline: 1.5px solid var(--secondary-color);
 }
 
-button {
+li {
+    width: 100%;
+}
+
+.btn-task {
     border: none;
     background: var(--secondary-color);
     color: #fff;
@@ -40,7 +45,7 @@ button {
     height: 30px;
 }
 
-button:hover {
+.btn-task:hover {
     background: var(--secondary-color-darker);
 }
 
@@ -52,6 +57,6 @@ button:hover {
     border-radius: 10px;
 }
 
-.tasks {
-    list-style: none;
+.tasks button {
+    margin-right: 50%;
 }
