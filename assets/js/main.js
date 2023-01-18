@@ -39,16 +39,11 @@ function newTask(txtInput) {
     div.appendChild(li)
     tasks.appendChild(div)
 
-    cleanButton(div)
     editButton(div)
+    cleanButton(div)
+    taskDate(div)
 
     saveTasks()
-}
-
-
-function cleanInput() {
-    inpTask.value = ''
-    inpTask.focus()
 }
 
 
@@ -67,6 +62,21 @@ function editButton(div) {
     editButton.setAttribute('class', 'btn-edit')
     editButton.setAttribute('title', 'Editar esta Tarefa.')
     div.appendChild(editButton)
+}
+
+
+function taskDate(div) {
+    const taskDate = document.createElement('p')
+    const date = new Date()
+
+    taskDate.setAttribute('class', 'date')
+    div.appendChild(taskDate)
+}
+
+
+function cleanInput() {
+    inpTask.value = ''
+    inpTask.focus()
 }
 
 

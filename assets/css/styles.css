@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 :root {
-    --primary-color: #0d0d0d;
-    --secondary-color: #9000FF;
-    --secondary-color-darker: #58009D;
-    --tertiary-color: #ABB2B9;
+    --black-color: #0d0d0d;
+    --purple-color: #9000FF;
+    --darkpurple-color: #58009D;
+    --whitegray-color: #ABB2B9;
+    --darkgray-color: #838383;
+    --red-color: #db3535;
 }
 
 
@@ -17,14 +19,42 @@
 
 
 body {
-    background-color: var(--primary-color);
+    height: 100vh;
+    background-image: 
+        linear-gradient(116deg, rgba(232, 232, 232, 0.03) 0%, rgba(232, 232, 232, 0.03) 10%,
+        rgba(14, 14, 14, 0.03) 10%, rgba(14, 14, 14, 0.03) 66%,rgba(232, 232, 232, 0.03) 66%,
+        rgba(232, 232, 232, 0.03) 72%,rgba(44, 44, 44, 0.03) 72%, rgba(44, 44, 44, 0.03) 81%,
+        rgba(51, 51, 51, 0.03) 81%, rgba(51, 51, 51, 0.03) 100%),
+        
+        linear-gradient(109deg, rgba(155, 155, 155, 0.03) 0%, rgba(155, 155, 155, 0.03) 23%,
+        rgba(30, 30, 30, 0.03) 23%, rgba(30, 30, 30, 0.03) 63%,rgba(124, 124, 124, 0.03) 63%,
+        rgba(124, 124, 124, 0.03) 73%,rgba(195, 195, 195, 0.03) 73%, rgba(195, 195, 195, 0.03) 84%,
+        rgba(187, 187, 187, 0.03) 84%, rgba(187, 187, 187, 0.03) 100%),
+        
+        linear-gradient(79deg, rgba(254, 254, 254, 0.03) 0%, rgba(254, 254, 254, 0.03) 27%,
+        rgba(180, 180, 180, 0.03) 27%, rgba(180, 180, 180, 0.03) 33%,rgba(167, 167, 167, 0.03) 33%,
+        rgba(167, 167, 167, 0.03) 34%,rgba(68, 68, 68, 0.03) 34%, rgba(68, 68, 68, 0.03) 63%,
+        rgba(171, 171, 171, 0.03) 63%, rgba(171, 171, 171, 0.03) 100%),
+        
+        linear-gradient(109deg, rgba(71, 71, 71, 0.03) 0%, rgba(71, 71, 71, 0.03) 3%,
+        rgba(97, 97, 97, 0.03) 3%, rgba(97, 97, 97, 0.03) 40%,rgba(40, 40, 40, 0.03) 40%,
+        rgba(40, 40, 40, 0.03) 55%,rgba(5, 5, 5, 0.03) 55%, rgba(5, 5, 5, 0.03) 73%,
+        rgba(242, 242, 242, 0.03) 73%, rgba(242, 242, 242, 0.03) 100%),
+        
+        linear-gradient(271deg, rgba(70, 70, 70, 0.03) 0%, rgba(70, 70, 70, 0.03) 11%,
+        rgba(178, 178, 178, 0.03) 11%, rgba(178, 178, 178, 0.03) 23%,rgba(28, 28, 28, 0.03) 23%,
+        rgba(28, 28, 28, 0.03) 72%,rgba(152, 152, 152, 0.03) 72%, rgba(152, 152, 152, 0.03) 86%,
+        rgba(43, 43, 43, 0.03) 86%, rgba(43, 43, 43, 0.03) 100%),
+        
+        linear-gradient(90deg, rgb(27, 27, 27),rgb(1, 1, 1));
+    
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5em;
 }
 
 
-.container {
-    max-width: 1200px;
+section.container {
+    width: 800px;
     margin: 50px auto;
     padding: 30px;
     background-color: #f5f5f5;
@@ -32,38 +62,50 @@ body {
 }
 
 
-.add-task {
+div.add-task {
     display: grid;
-    grid-template-columns: 94% 5%;
-    grid-column-gap: 1%;
-    margin-bottom: 15px;
+    grid-template-columns: auto 50px;
+    grid-column-gap: 10px;
 }
 
 
-.inp-task {
-    font-size: 18px;  
+input.inp-task {
+    font-size: 18px;
     padding: 12px;
     border-radius: 5px;
     height: 50px;
     border: none;
-    outline: 0.5px solid var(--tertiary-color);
+    outline: 0.5px solid var(--whitegray-color);
 }
 
 
-.inp-task:focus {
-    outline: 2.3px solid var(--secondary-color);
+input.inp-task:focus {
+    outline: 2px solid var(--purple-color);
 }
 
 
 button {
+    width: 50px;
+    height: 50px;
     border: none;
-    background: var(--secondary-color);
+    background: var(--purple-color);
     color: #fff;
     font-weight: 700;
     cursor: pointer;
     padding: 5px;
     border-radius: 5px;
-    height: 50px;
+}
+
+
+hr {
+    margin: 20px 10px;
+    border-top: 3px dotted #bbb;
+}
+
+
+div.header {
+    display: grid;
+    grid-template-columns: auto 200px 200px 100px;
 }
 
 
@@ -74,23 +116,29 @@ button {
 
 .tasks div {
     display: grid;
-    grid-template-columns: 88% 5% 5%;
-    gap: 1%;
+    grid-template-columns: auto 200px 200px 100px;
+    gap: 10px;
     align-items: center;
+    margin: 5px 0;
+}
+
+
+.tasks button {
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: 50%;
 }
 
 
 .btn-clean {
     background-image: url(/assets/img/lixeira.png);
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: 50%;
+    background-color: var(--red-color);
 }
 
 
 .btn-edit {
     background-image: url(/assets/img/editar.png);
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: 50%;
+    background-color: var(--darkgray-color);
 }
