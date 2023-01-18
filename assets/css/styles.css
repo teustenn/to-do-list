@@ -7,6 +7,7 @@
     --tertiary-color: #ABB2B9;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -14,48 +15,55 @@
     outline: 0;
 }
 
+
 body {
     background-color: var(--primary-color);
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5em;
 }
 
+
 .container {
-    max-width: 600px;
+    max-width: 1200px;
     margin: 50px auto;
     padding: 30px;
     background-color: #f5f5f5;
     border-radius: 10px;
 }
 
-input, button {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 15px;
-    padding: 5px;
-    border-radius: 5px;
-}
 
-input:focus {
-    outline: 1.5px solid var(--secondary-color);
-}
-
-.grid {
+.add-task {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 94% 5%;
+    grid-column-gap: 1%;
+    margin-bottom: 15px;
 }
 
-.btn-task {
+
+.inp-task {
+    font-size: 18px;  
+    padding: 12px;
+    border-radius: 5px;
+    height: 50px;
+    border: none;
+    outline: 0.5px solid var(--tertiary-color);
+}
+
+
+.inp-task:focus {
+    outline: 2.3px solid var(--secondary-color);
+}
+
+
+button {
     border: none;
     background: var(--secondary-color);
     color: #fff;
     font-weight: 700;
     cursor: pointer;
-    height: 30px;
-}
-
-.btn-task:hover {
-    background: var(--secondary-color-darker);
+    padding: 5px;
+    border-radius: 5px;
+    height: 50px;
 }
 
 
@@ -63,8 +71,26 @@ input:focus {
     list-style: none;
 }
 
+
 .tasks div {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 88% 5% 5%;
+    gap: 1%;
     align-items: center;
+}
+
+
+.btn-clean {
+    background-image: url(/assets/img/lixeira.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50%;
+}
+
+
+.btn-edit {
+    background-image: url(/assets/img/editar.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50%;
 }

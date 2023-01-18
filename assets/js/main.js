@@ -38,7 +38,10 @@ function newTask(txtInput) {
     li.innerText = txtInput
     div.appendChild(li)
     tasks.appendChild(div)
+
     cleanButton(div)
+    editButton(div)
+
     saveTasks()
 }
 
@@ -52,10 +55,18 @@ function cleanInput() {
 function cleanButton(div) {
     const cleanButton = document.createElement('button')
     
-    cleanButton.innerText = 'Apagar'
     cleanButton.setAttribute('class', 'btn-clean')
-    cleanButton.setAttribute('title', 'Apagar esta tarefa')
+    cleanButton.setAttribute('title', 'Apagar esta Tarefa.')
     div.appendChild(cleanButton)
+}
+
+
+function editButton(div) {
+    const editButton = document.createElement('button')
+
+    editButton.setAttribute('class', 'btn-edit')
+    editButton.setAttribute('title', 'Editar esta Tarefa.')
+    div.appendChild(editButton)
 }
 
 
@@ -72,5 +83,16 @@ function saveTasks() {
 
     const tasksJSON = JSON.stringify(taskList)
     localStorage.setItem('tasks', tasksJSON)
-    console.log(tasksJSON)
 }
+
+
+function readSaveTasks() {
+    const tasks = localStorage.getItem('tasks')
+    const listTasks = JSON.parse(tasks)
+
+    for (let task of listTasks) {
+        newTask(task)
+    }
+}
+
+readSaveTasks()
